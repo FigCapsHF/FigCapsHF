@@ -30,11 +30,11 @@ pip install --upgrade pip
 git clone https://github.com/FigCapsHF/FigCaps.git
 cd RLHF
 pip install -r requirements.txt
-wget https://figshare.com/ndownloader/files/40317607 -O dataset.zip
+wget https://figshare.com/ndownloader/files/41066162 -O dataset.zip
 unzip dataset.zip
-./cp.sh
-```
 
+```
+<!-- ./cp.sh -->
 
 
 

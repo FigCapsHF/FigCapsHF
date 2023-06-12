@@ -39,14 +39,16 @@ pip install -r requirements.txt
 wget ... 
 ```
 
-NOTES
 ## Example Usage
 ## RLHF Fine-tuning
 ## Inference
 ## Human Feedback Generation
 ## License
-This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
-This dataset uses data in the arXiv dataset. The arXiv dataset uses the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication license for the metadata, which grants permission to remix, remake, annotate, and publish the metadata.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  
+This dataset uses data in the [arXiv dataset](https://www.kaggle.com/Cornell-University/arxiv).
+The [arXiv dataset](https://www.kaggle.com/Cornell-University/arxiv) uses the [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication license](https://creativecommons.org/publicdomain/zero/1.0/) for the metadata, which grants permission to remix, remake, annotate, and publish the metadata.
 
 <!-- Another way for Training. -->
 <!-- Here we are using BLIP as a sample model for training using Pytorch's native DataLoader library combined with Huggingface's dataset class. It also has a training loop. User can provide arguments for their desired functionality as shown in the script below. To change the the number of epochs and learning rate, modify config variable in train_blip.py.

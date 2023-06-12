@@ -27,11 +27,11 @@ Number of Figures in Each Subset
 
 Additionally, we include the human evaluations of 439 figure-caption pairs as a CSV in the dataset. These evaluations consist of ratings, for each image-caption pair, of the “helpfulness”, “OCR (quality)”, “takeaway” and “visual (descriptiveness)”, from which we learn about human feedback for figure-caption pairs. 
 
-## Retrieving the dataset
-Our benchmark dataset can be downloaded from [[`here`](https://figshare.com/s/c034fd77bea9475319cb)].
+<!-- ## Retrieving the dataset
+Our benchmark dataset can be downloaded from [[`here`](https://figshare.com/s/c034fd77bea9475319cb)]. -->
 
 ## Installation 
-We first need to clone this repository and install the requirements
+We first need to clone this repository, install the requirements, and download the benchmark dataset
 ```shell
 pip install --upgrade pip
 git clone https://github.com/FigCapsHF/FigCapsHF
@@ -40,9 +40,19 @@ wget ...
 ```
 
 ## Example Usage
+
+
 ## RLHF Fine-tuning
+
+
+
 ## Inference
+
+
 ## Human Feedback Generation
+
+
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

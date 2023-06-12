@@ -1,24 +1,26 @@
-# A Figure-to-Caption Generative Modeling Framework with RLHF
-
+# FigCaps-HF: A Figure-to-Caption Generative Framework and Benchmark with Human Feedback
 
 [[`Paper`]()]  [[`BibTex`]()]
 
+## Abstract
+Captions are crucial for understanding scientific visualizations and documents.
+Existing captioning methods for scientific figures rely on figure-caption pairs extracted from documents for training, many of which fall short with respect to metrics like helpfulness, explainability, and visual-descriptiveness \cite{summaries-as-captions-preprint} leading to generated captions being misaligned with reader preferences. 
+To enable the generation of high-quality figure captions, we introduce \textbf{FigCaps-HF} a new framework for figure-caption generation that can incorporate domain expert feedback in generating captions optimized for reader preferences. 
+Our framework comprises of 1) an automatic method for evaluating quality of figure-caption pairs, 2) a novel reinforcement learning with human feedback (RLHF) method to optimize a generative figure-to-caption model for reader preferences.
+We demonstrate the effectiveness of our simple learning framework by improving performance over standard fine-tuning across different types of models. 
+In particular, when using BLIP as the base model, our RLHF framework achieves a mean gain of 35.7\%, 16.9\%, and 9\% in ROUGE, BLEU, and Meteor, respectively. 
+Finally, we release a large-scale benchmark dataset with human feedback on figure-caption pairs to enable further evaluation and development of RLHF techniques for this problem.
 
-RLHF provides a robust benchmark dataset for facilitating the study and application of Reinforcement Learning with Human Feedback (RLHF) in the domain of scientific figures generation. 
-
-
-
-![RLHF-Framework](/Figures/fig-RLHF-framework-1.png) 
+<!-- ![RLHF-Framework](/Figures/fig-RLHF-framework-1.png)  -->
 
 ## RLHF Dataset
 
-RLHF dataset performance in comparsion to baselines
+RLHF dataset performance in comparison to baselines
 
 | Model            | Parameters | Rouge-L | Bleu   | Meteor |
 |------------------|------------|---------|--------|--------|
 | BLIP             | 0.25B      | 0.130   | 0.014  | 0.132  |
 | Ours-BLIP-RLHF   | 0.25B      | 0.152   | 0.019  | 0.145  |
-
 
 
 ## Training (Using BLIP as the sample model for the RLHF dataset)
@@ -35,16 +37,6 @@ wget https://figshare.com/ndownloader/files/40317607 -O dataset.zip
 unzip dataset.zip
 
 ```
-
-
-
-
-<!-- Using VIT-gpt2 as a sample model for training using Huggingface's dataset library and its seq2seqTrainer for a simple training on our dataset, it will save the model under the directory model, and wills save checkpoints for every epoch. Modify the variable training_args if user wants to have different training arguments. If User desire to use other models using Huggingface's Trainer class, modify the model specification under train_vit_gpt2.py
-```shell
-python train_vit_gpt2.py
-
-``` -->
-
 <!-- Another way for Training. -->
 Here we are using BLIP as a sample model for training using Pytorch's native DataLoader library combined with Huggingface's dataset class. It also has a training loop. User can provide arguments for their desired functionality as shown in the script below. To change the the number of epochs and learning rate, modify config variable in train_blip.py.
 ```shell

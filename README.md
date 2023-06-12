@@ -1,6 +1,6 @@
 # FigCaps-HF: A Figure-to-Caption Generative Framework and Benchmark with Human Feedback
 
-[[`Paper`]()]  [[`BibTex`]()]
+[[`Paper`]()]  [[`BibTex`]()] [[`Website`]()]
 
 ## Abstract
 Captions are crucial for understanding scientific visualizations and documents.
@@ -12,6 +12,35 @@ In particular, when using BLIP as the base model, our RLHF framework achieves a 
 Finally, we release a large-scale benchmark dataset with human feedback on figure-caption pairs to enable further evaluation and development of RLHF techniques for this problem.
 
 <!-- ![RLHF-Framework](/Figures/fig-RLHF-framework-1.png)  -->
+
+## Benchmark Dataset
+Size statistics
+Performance Increase
+
+##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## RLHF Dataset
 

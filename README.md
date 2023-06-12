@@ -11,8 +11,6 @@ We demonstrate the effectiveness of our simple learning framework by improving p
 In particular, when using BLIP as the base model, our RLHF framework achieves a mean gain of 35.7\%, 16.9\%, and 9\% in ROUGE, BLEU, and Meteor, respectively. 
 Finally, we release a large-scale benchmark dataset with human feedback on figure-caption pairs to enable further evaluation and development of RLHF techniques for this problem.
 
-RLHF dataset performance in comparison to baselines:
-
 | Model            | Parameters | ROUGE-L | BLEU   | Meteor |
 |------------------|------------|---------|--------|--------|
 | BLIP             | 0.25B      | 0.130   | 0.014  | 0.132  |
@@ -29,6 +27,7 @@ Number of Figures in Each Subset
 Additionally, we include the human evaluations of 439 figure-caption pairs as a CSV in the dataset. These evaluations consist of ratings, for each image-caption pair, of the “helpfulness”, “OCR (quality)”, “takeaway” and “visual (descriptiveness)”, from which we learn about human feedback for figure-caption pairs. 
 
 ## Retrieving the dataset
+
 
 ## Example Usage
 

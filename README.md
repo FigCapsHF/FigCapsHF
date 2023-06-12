@@ -13,7 +13,7 @@ Finally, we release a large-scale benchmark dataset with human feedback on figur
 
 RLHF dataset performance in comparison to baselines:
 
-| Model            | Parameters | ROUGE-L | BLEU   | METEOR |
+| Model            | Parameters | ROUGE-L | BLEU   | Meteor |
 |------------------|------------|---------|--------|--------|
 | BLIP             | 0.25B      | 0.130   | 0.014  | 0.132  |
 | Ours-BLIP-RLHF   | 0.25B      | 0.152   | 0.019  | 0.145  |

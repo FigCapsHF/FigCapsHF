@@ -1,6 +1,7 @@
 # FigCaps-HF: A Figure-to-Caption Generative Framework and Benchmark with Human Feedback
 
-[[`Paper`]()]  [[`BibTex`]()] [[`Website`](https://figcapshf.github.io/)] [[`Benchmark Dataset`](https://figshare.com/s/c034fd77bea9475319cb)]
+<!-- [[`Paper`]()]  [[`BibTex`]()]  -->
+[[`Website`](https://figcapshf.github.io/)] [[`Benchmark Dataset`](https://figshare.com/s/c034fd77bea9475319cb)]
 
 ## Abstract
 Captions are crucial for understanding scientific visualizations and documents.

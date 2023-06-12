@@ -18,7 +18,7 @@ def main():
     meteor = evaluate.load('meteor')
     bleu = evaluate.load("bleu")
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    parser = argparse.ArgumentParser(description='BLIP with RLHF test script')
+    parser = argparse.ArgumentParser(description='BLIP test script')
     parser.add_argument('--benchmark_path', help='Path to the benchmark dataset')
     parser.add_argument('--model_path', help='Path to the downloaded model')
     args = parser.parse_args()

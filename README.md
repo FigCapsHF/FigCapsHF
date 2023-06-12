@@ -27,38 +27,28 @@ Number of Figures in Each Subset
 Additionally, we include the human evaluations of 439 figure-caption pairs as a CSV in the dataset. These evaluations consist of ratings, for each image-caption pair, of the “helpfulness”, “OCR (quality)”, “takeaway” and “visual (descriptiveness)”, from which we learn about human feedback for figure-caption pairs. 
 
 ## Retrieving the dataset
-
+Our benchmark dataset can be downloaded from [[`here`](https://figshare.com/s/c034fd77bea9475319cb)].
 
 ## Example Usage
-
-shell stuff
-
+We first need to clone this repository and install the requirements
+```shell
+pip install --upgrade pip
+git clone https://github.com/FigCapsHF/FigCapsHF
+pip install -r requirements.txt
+```
 ## Reproducibility of Experiments
 
-## Data Manipulations and other stuff 
-
+## Data Manipulations and inferring human feedback
 
 ## RLHF Dataset
-
-
-
 
 ## Training (Using BLIP as the sample model for the RLHF dataset)
 
 Downloading and unzipping the dataset and downloading dependencies 
 
-```shell
-pip install --upgrade pip
-git clone https://github.com/FigCapsHF/FigCaps.git
-cd RLHF
-pip install -r requirements.txt
-wget https://figshare.com/ndownloader/files/40317607 -O dataset.zip
-./cp.sh
-unzip dataset.zip
 
-```
 <!-- Another way for Training. -->
-Here we are using BLIP as a sample model for training using Pytorch's native DataLoader library combined with Huggingface's dataset class. It also has a training loop. User can provide arguments for their desired functionality as shown in the script below. To change the the number of epochs and learning rate, modify config variable in train_blip.py.
+<!-- Here we are using BLIP as a sample model for training using Pytorch's native DataLoader library combined with Huggingface's dataset class. It also has a training loop. User can provide arguments for their desired functionality as shown in the script below. To change the the number of epochs and learning rate, modify config variable in train_blip.py.
 ```shell
 python train_blip.py --f16 --output_dir output
 
@@ -76,7 +66,7 @@ python inference.py sample.png
 ```
 If running on a CPU, the expected result is *the results of comparing oa and noa in terms of mean of error.* (on seed 42).
 
-![Sample Scientific figure](/Figures/sample.png) 
+![Sample Scientific figure](/Figures/sample.png)  -->
 
 
 

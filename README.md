@@ -67,19 +67,7 @@ If running on a CPU, the expected result is *the results of comparing oa and noa
 ![Sample Scientific figure](/Figures/sample.png) 
 
 
-## Creating your own metadata (Specific to Huggingface's datasets library)
-In order to use huggingface's dataset library to include other metadata, a metadata.jsonl file for each of the split containing contents shown below must be created, we have created a default one for three splits containing the human feedback caption using the helpfulness score.
-```
 
-
-{"file_name": filename, "metadata1":data, "metadata2":data}
-...
-
-Here are some contents from the example metadata.jsonl
-{"file_name": "1001.0036v1-Figure9-1.png", "RLHF_caption": "[BAD] stimulated barrel cortex neuron isi distribution and time-dependent complexity and entropies . ( a ) isi distribution and % confidence bounds . ( b ) first panel : firing probability as a function of time since stimulus presentation . second panel : time-dependent complexity . third panel : time-dependent entropies . ( c ) the stimulus driven entropy ( maximum of 0.02 bits/msec ) is low because the number of spikes per stimulus ( \u2248 0.1 \u2212 0.2 ) is very low and hence the stimulus does not supply much information ."}
-{"file_name": "1001.0317v2-Figure2-1.png", "RLHF_caption": "[BAD] variable -d initial probe distribution used for cfo runs reported here ."}
-...
-```
 
 ## Model card
 Please see the [model card](model_card.md) for details.

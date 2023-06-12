@@ -8,7 +8,7 @@ RLHF provides a robust benchmark dataset for facilitating the study and applicat
 
 
 
-![RLHF-Framework](fig-RLHF-framework-1.png) 
+![RLHF-Framework](/Figures/fig-RLHF-framework-1.png) 
 
 ## RLHF Dataset
 
@@ -64,7 +64,7 @@ python inference.py sample.png
 ```
 If running on a CPU, the expected result is *the results of comparing oa and noa in terms of mean of error.* (on seed 42).
 
-![Sample Scientific figure](sample.png) 
+![Sample Scientific figure](/Figures/sample.png) 
 
 
 ## Creating your own metadata (Specific to Huggingface's datasets library)

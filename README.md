@@ -1,6 +1,6 @@
 # FigCaps-HF: A Figure-to-Caption Generative Framework and Benchmark with Human Feedback
 
-[[`Paper`]()]  [[`BibTex`]()] [[`Website`]()]
+[[`Paper`]()]  [[`BibTex`]()] [[`Website`](https://figcapshf.github.io/)] [[`Benchmark Dataset`](https://figshare.com/s/c034fd77bea9475319cb)]
 
 ## Abstract
 Captions are crucial for understanding scientific visualizations and documents.
@@ -11,45 +11,40 @@ We demonstrate the effectiveness of our simple learning framework by improving p
 In particular, when using BLIP as the base model, our RLHF framework achieves a mean gain of 35.7\%, 16.9\%, and 9\% in ROUGE, BLEU, and Meteor, respectively. 
 Finally, we release a large-scale benchmark dataset with human feedback on figure-caption pairs to enable further evaluation and development of RLHF techniques for this problem.
 
-<!-- ![RLHF-Framework](/Figures/fig-RLHF-framework-1.png)  -->
-
-## Benchmark Dataset
-Size statistics
-Performance Increase
-
-##
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## RLHF Dataset
-
+### Performance 
 RLHF dataset performance in comparison to baselines
 
 | Model            | Parameters | Rouge-L | Bleu   | Meteor |
 |------------------|------------|---------|--------|--------|
 | BLIP             | 0.25B      | 0.130   | 0.014  | 0.132  |
 | Ours-BLIP-RLHF   | 0.25B      | 0.152   | 0.019  | 0.145  |
+
+
+<!-- ![RLHF-Framework](/Figures/fig-RLHF-framework-1.png)  -->
+
+## Benchmark Dataset
+
+### Number of Figures in Each Subset
+
+|                         |  Train  | Validate |  Test  |
+|------------------------:|:-------:|:--------:|:------:|
+| Benchmark               | 106,834 |  13,354  | 13,355 |
+
+
+## Retrieving the dataset
+
+## Example Usage
+
+shell stuff
+
+## Reproducibility of Experiments
+
+## Data Manipulations and other stuff 
+
+
+## RLHF Dataset
+
+
 
 
 ## Training (Using BLIP as the sample model for the RLHF dataset)

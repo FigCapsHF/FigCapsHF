@@ -41,17 +41,20 @@ wget ...
 
 ## Example Usage
 
-
 ## RLHF Fine-tuning
-
-
-
+```python
+python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path XX/benchmark
+```
 ## Inference
-
-
+```python
+python inference.py --figure_path /path/test_image.png --model_path /path/model.pth
+```
 ## Human Feedback Generation
-
-
+```python
+from FigCapsHF import FigCapsHF
+FigCapsHF = FigCapsHF("path/to/benchmark/data")
+inferred_hf_df = FigCapsHF.infer_hf_training_set(hf_score_type = "helpfulness", embedding_model = "BERT", max_num_samples = 100, quantization_levels = 3, mapped_hf_labels = ["Bad", "Neutral", "Good"])
+```
 
 ## License
 

@@ -21,6 +21,8 @@ class ImageCaptioningDataset(Dataset):
     def __getitem__(self, idx):
         item = self.dataset[idx]
         encoding = self.processor(images=item["image"], text=item['human_feedback'][self.hf_score_type]['caption-prepend'], padding="max_length", truncation=True, max_length=512, return_tensors="pt")
+        #To run a baseline experiment, instead use:
+        #encoding = self.processor(images=item["image"], text=item['text'], padding="max_length", truncation=True, max_length=512, return_tensors="pt")
         # remove batch dimension
         encoding = {k:v.squeeze() for k,v in encoding.items()}
         return encoding

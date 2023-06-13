@@ -19,7 +19,7 @@ class FigCapsHF():
      def generate_jsonl(self):
 
         """
-        Used to generates metadata.jsonl's for train/test/val and place it under their respective folders in No-Subfig-Img. Also verifies if dataset is consistent.
+        Used to generate metadata.jsonl's for train/test/val and place it under their respective folders in No-Subfig-Img. Also verifies if dataset is consistent.
         """
 
         #Prepare the train dataset

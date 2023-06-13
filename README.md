@@ -36,9 +36,9 @@ We first need to clone this repository, install the requirements, and download t
 pip install --upgrade pip
 git clone https://github.com/FigCapsHF/FigCapsHF
 pip install -r requirements.txt
-wget ... 
+wget  https://figshare.com/ndownloader/files/41222934 -O benchmark.zip
+unzip benchmark.zip
 ```
-
 ## Example Usage
 
 ## RLHF Fine-tuning

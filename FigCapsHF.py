@@ -15,6 +15,74 @@ class FigCapsHF():
     """
     Main class for FigCapsHF
     """
+    
+     def generate_jsonl(self):
+
+        """
+        Used to generates metadata.jsonl's for train/test/val and place it under their respective folders in No-Subfig-Img
+        """
+
+        #Prepare the train dataset
+        file_idx_path = os.path.join(self.benchmark_path,"List-of-Files-for-Each-Experiments","First-Sentence","No-Subfig","train","file_idx.json")
+        captions_list = []
+        f = open(file_idx_path)
+        file_idx = json.load(f)
+        for image_name in tqdm(file_idx):
+            file_metadata_path = os.path.join(self.benchmark_path,"Caption-All","train",os.path.splitext(image_name)[0]+".json")
+            c = open(file_metadata_path)
+            file_metadata = json.load(c)
+            captions_list.append({"file_name":file_metadata['figure-ID'],
+                                  "text":file_metadata['1-lowercase-and-token-and-remove-figure-index']['caption'],  
+                                  "human_feedback": file_metadata['human-feedback']})
+            c.close()
+        f.close()
+        print("There are " + str(len(captions_list)) + " training samples")
+        train_image_folder_path = os.path.join(self.benchmark_path,"No-Subfig-Img","train")+"/"
+        with open(train_image_folder_path + "metadata.jsonl", 'w') as f:
+            for caption in captions_list:
+                f.write(json.dumps(caption) + "\n")
+        f.close()
+        #Prepare the val dataset
+        file_idx_path = os.path.join(self.benchmark_path,"List-of-Files-for-Each-Experiments","First-Sentence","No-Subfig","val","file_idx.json")
+        captions_list = []
+        f = open(file_idx_path)
+        file_idx = json.load(f)
+        for image_name in tqdm(file_idx):
+            file_metadata_path = os.path.join(self.benchmark_path,"Caption-All","val",os.path.splitext(image_name)[0]+".json")
+            c = open(file_metadata_path)
+            file_metadata = json.load(c)
+            captions_list.append({"file_name":file_metadata['figure-ID'],
+                                  "text":file_metadata['1-lowercase-and-token-and-remove-figure-index']['caption'],  
+                                  "human_feedback": file_metadata['human-feedback']})
+            c.close()
+        f.close()
+        print("There are " + str(len(captions_list)) + " validation samples")
+        val_image_folder_path = os.path.join(self.benchmark_path,"No-Subfig-Img","val")+"/"
+        with open(val_image_folder_path + "metadata.jsonl", 'w') as f:
+            for caption in captions_list:
+                f.write(json.dumps(caption) + "\n")
+        f.close()
+        #Prepare the test dataset
+        file_idx_path = os.path.join(self.benchmark_path,"List-of-Files-for-Each-Experiments","First-Sentence","No-Subfig","test","file_idx.json")
+        captions_list = []
+        f = open(file_idx_path)
+        file_idx = json.load(f)
+        for image_name in tqdm(file_idx):
+            file_metadata_path = os.path.join(self.benchmark_path,"Caption-All","test",os.path.splitext(image_name)[0]+".json")
+            c = open(file_metadata_path)
+            file_metadata = json.load(c)
+            captions_list.append({"file_name":file_metadata['figure-ID'],
+                                  "text":file_metadata['1-lowercase-and-token-and-remove-figure-index']['caption'],  
+                                  "human_feedback": file_metadata['human-feedback']})
+            c.close()
+        f.close()
+        print("There are " + str(len(captions_list)) + " test examples")
+        test_image_folder_path = os.path.join(self.benchmark_path,"No-Subfig-Img","test")+"/"
+        with open(test_image_folder_path + "metadata.jsonl", 'w') as f:
+            for caption in captions_list:
+                f.write(json.dumps(caption) + "\n")
+        f.close()
+        print("Successfully generated jsonl for train, test and validation")
      
     def __init__(self, benchmark_path) -> None:
         
@@ -25,6 +93,7 @@ class FigCapsHF():
         """
         
         self.benchmark_path = benchmark_path
+        self.generate_jsonl()
         
     def get_image_caption_pair(self, data_split, image_name):
         
@@ -310,70 +379,4 @@ class FigCapsHF():
         return inferred_hf_df
 
 
-    def generate_jsonl(self):
-
-            """
-            Used to generates metadata.jsonl's for train/test/val and place it under their respective folders in No-Subfig-Img
-            """
-
-            #Prepare the train dataset
-            file_idx_path = os.path.join(self.benchmark_path,"List-of-Files-for-Each-Experiments","First-Sentence","No-Subfig","train","file_idx.json")
-            captions_list = []
-            f = open(file_idx_path)
-            file_idx = json.load(f)
-            for image_name in tqdm(file_idx):
-                file_metadata_path = os.path.join(self.benchmark_path,"Caption-All","train",os.path.splitext(image_name)[0]+".json")
-                c = open(file_metadata_path)
-                file_metadata = json.load(c)
-                captions_list.append({"file_name":file_metadata['figure-ID'],
-                                      "text":file_metadata['1-lowercase-and-token-and-remove-figure-index']['caption'],  
-                                      "human_feedback": file_metadata['human-feedback']})
-                c.close()
-            f.close()
-            print("There are " + str(len(captions_list)) + " training samples")
-            train_image_folder_path = os.path.join(self.benchmark_path,"No-Subfig-Img","train")+"/"
-            with open(train_image_folder_path + "metadata.jsonl", 'w') as f:
-                for caption in captions_list:
-                    f.write(json.dumps(caption) + "\n")
-            f.close()
-            #Prepare the val dataset
-            file_idx_path = os.path.join(self.benchmark_path,"List-of-Files-for-Each-Experiments","First-Sentence","No-Subfig","val","file_idx.json")
-            captions_list = []
-            f = open(file_idx_path)
-            file_idx = json.load(f)
-            for image_name in tqdm(file_idx):
-                file_metadata_path = os.path.join(self.benchmark_path,"Caption-All","val",os.path.splitext(image_name)[0]+".json")
-                c = open(file_metadata_path)
-                file_metadata = json.load(c)
-                captions_list.append({"file_name":file_metadata['figure-ID'],
-                                      "text":file_metadata['1-lowercase-and-token-and-remove-figure-index']['caption'],  
-                                      "human_feedback": file_metadata['human-feedback']})
-                c.close()
-            f.close()
-            print("There are " + str(len(captions_list)) + " validation samples")
-            val_image_folder_path = os.path.join(self.benchmark_path,"No-Subfig-Img","val")+"/"
-            with open(val_image_folder_path + "metadata.jsonl", 'w') as f:
-                for caption in captions_list:
-                    f.write(json.dumps(caption) + "\n")
-            f.close()
-            #Prepare the test dataset
-            file_idx_path = os.path.join(self.benchmark_path,"List-of-Files-for-Each-Experiments","First-Sentence","No-Subfig","test","file_idx.json")
-            captions_list = []
-            f = open(file_idx_path)
-            file_idx = json.load(f)
-            for image_name in tqdm(file_idx):
-                file_metadata_path = os.path.join(self.benchmark_path,"Caption-All","test",os.path.splitext(image_name)[0]+".json")
-                c = open(file_metadata_path)
-                file_metadata = json.load(c)
-                captions_list.append({"file_name":file_metadata['figure-ID'],
-                                      "text":file_metadata['1-lowercase-and-token-and-remove-figure-index']['caption'],  
-                                      "human_feedback": file_metadata['human-feedback']})
-                c.close()
-            f.close()
-            print("There are " + str(len(captions_list)) + " test examples")
-            test_image_folder_path = os.path.join(self.benchmark_path,"No-Subfig-Img","test")+"/"
-            with open(test_image_folder_path + "metadata.jsonl", 'w') as f:
-                for caption in captions_list:
-                    f.write(json.dumps(caption) + "\n")
-            f.close()
-            print("Successfully generated jsonl for train, test and validation")
+   

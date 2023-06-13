@@ -178,13 +178,13 @@ from FigCapsHF import FigCapsHF
 FigCapsHF = FigCapsHF("path/to/benchmark/data")
 inferred_hf_df = FigCapsHF.infer_hf_training_set(hf_score_type = "helpfulness", embedding_model = "BERT", max_num_samples = 100, quantization_levels = 3, mapped_hf_labels = ["Bad", "Neutral", "Good"])
 ```
-
+<!-- 
 
 | Model            | Parameters | ROUGE-L | BLEU   | Meteor |
 |------------------|------------|---------|--------|--------|
 | BLIP             | 0.25B      | 0.130   | 0.014  | 0.132  |
 | Ours-BLIP-RLHF   | 0.25B      | 0.152   | 0.019  | 0.145  |
-
+ -->
 <!-- ## Retrieving the dataset
 Our benchmark dataset can be downloaded from [[`here`](https://figshare.com/s/c034fd77bea9475319cb)]. -->
 

@@ -139,20 +139,6 @@ Within the human feedback metadata, we have the inferred human-feedback for the 
     - **Token:**             [Good]/[Bad]
     - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Installation 
 We first need to clone this repository, install the requirements, and download the benchmark dataset
 ```shell
@@ -169,8 +155,13 @@ unzip benchmark.zip
 python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path XX/benchmark
 ```
 ### Inference
+For a single image
 ```python
 python inference.py --figure_path /path/test_image.png --model_path /path/model.pth
+```
+Generate test metrics for the entire dataset
+```python
+python train_blip.py --benchmark_path XX/benchmark
 ```
 ### Human Feedback Generation
 ```python
@@ -187,16 +178,6 @@ inferred_hf_df = FigCapsHF.infer_hf_training_set(hf_score_type = "helpfulness", 
  -->
 <!-- ## Retrieving the dataset
 Our benchmark dataset can be downloaded from [[`here`](https://figshare.com/s/c034fd77bea9475319cb)]. -->
-
-
-
-
-
-
-
-
-
-
 
 ## License
 

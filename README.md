@@ -163,8 +163,8 @@ Our RLHF-Finetuned BLIP Model can be downloaded here: [[Download Link](https://d
 python inference.py --figure_path /path/test_image.png --model_path /path/model.pth
 ```
 ```python
-#Generate test metrics for the entire dataset
-python train_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
+#Generate evaluation metrics for the entire test dataset
+python test_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
 ```
 ### Human Feedback Generation
 

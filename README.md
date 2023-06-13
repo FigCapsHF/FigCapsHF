@@ -153,7 +153,7 @@ unzip benchmark.zip
 
 ### RLHF Fine-tuning
 ```python
-# Code edits to implement a baseline are also included in train_blip.py
+#Code edits to implement a baseline are also included in train_blip.py
 #Preferred training on GPUs. If training on CPU, add "--cpu" flag.
 python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path XX/benchmark
 

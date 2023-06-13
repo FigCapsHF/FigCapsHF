@@ -121,7 +121,7 @@ Within the caption content, we have three attributes:
 
 Within the human feedback metadata, we have the inferred human-feedback for the different metrics (helpfulness, ocr, takeaway, and visual)
 
-**HumanFeedback:** 
+**human-feedback:** 
   - **Helpfulness:**   Expert's rating on how helpful a caption is to understand a scientific figure
     - **Score:**             predicted score                               
     - **Token:**             [Good]/[Bad]

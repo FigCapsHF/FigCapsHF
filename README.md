@@ -164,15 +164,15 @@ unzip benchmark.zip
 ```
 ## Example Usage
 
-## RLHF Fine-tuning
+### RLHF Fine-tuning
 ```python
 python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path XX/benchmark
 ```
-## Inference
+### Inference
 ```python
 python inference.py --figure_path /path/test_image.png --model_path /path/model.pth
 ```
-## Human Feedback Generation
+### Human Feedback Generation
 ```python
 from FigCapsHF import FigCapsHF
 FigCapsHF = FigCapsHF("path/to/benchmark/data")

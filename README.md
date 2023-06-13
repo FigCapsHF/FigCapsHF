@@ -119,7 +119,7 @@ Within the caption content, we have three attributes:
 - **sentence:** a list of segmented sentences
 - **token:** a list of tokenized words
 
-Within the human feedback metadata, we have the inferred human-feedback for the different metrics (helpfulness, ocr, takeaway, and visual)
+Within the human-feedback field, we have the inferred human-feedback for the different metrics (helpfulness, ocr, takeaway, and visual)
 
 **human-feedback:** 
   - **helpfulness:**   Expert's rating on how helpful a caption is to understand a scientific figure

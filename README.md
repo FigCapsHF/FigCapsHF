@@ -49,10 +49,7 @@ The included human-feedback.csv contains human evaluations of 439 figure image-c
 
 ## JSON Data Format (for each figure-caption in Caption-All)
 
-### Example Data Instance (Caption and Figure)
-
-An example JSON object:
-
+### Example JSON
 ```
 {
   "contains-subfigure": true, 

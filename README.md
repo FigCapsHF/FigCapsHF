@@ -153,6 +153,7 @@ unzip benchmark.zip
 
 ### RLHF Fine-tuning
 ```python
+# Simple method to implement a baseline is also included in train_blip.py
 python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path XX/benchmark
 ```
 ### Inference 
@@ -163,7 +164,7 @@ Our RLHF Fine-tuned BLIP Model can be downloaded here: [[Download Link](https://
 python inference.py --figure_path /path/test_image.png --model_path /path/model.pth
 ```
 ```python
-#Generate evaluation metrics for the entire test dataset
+#Generate evaluation metrics on the test dataset
 python test_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
 ```
 ### Human Feedback Generation

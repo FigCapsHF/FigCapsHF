@@ -140,8 +140,9 @@ Within the human-feedback field, we have the inferred human-feedback for the dif
     - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended
 
 ## Installation 
-We first need to clone this repository, install the requirements, and download the benchmark dataset
+
 ```shell
+#We first need to clone this repository, install the requirements, and download the benchmark dataset
 pip install --upgrade pip
 git clone https://github.com/FigCapsHF/FigCapsHF
 pip install -r requirements.txt
@@ -155,12 +156,13 @@ unzip benchmark.zip
 python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path XX/benchmark
 ```
 ### Inference
-Generate caption for a single image
+
 ```python
+#Generate caption for a single image
 python inference.py --figure_path /path/test_image.png --model_path /path/model.pth
 ```
-Generate test metrics for the entire dataset
 ```python
+#Generate test metrics for the entire dataset
 python train_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
 ```
 ### Human Feedback Generation

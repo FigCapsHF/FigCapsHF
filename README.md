@@ -8,6 +8,154 @@ Our framework comprises of 1) an automatic method for evaluating quality of figu
 
 We release a large-scale benchmark dataset with human feedback on figure-caption pairs to enable further evaluation and development of RLHF techniques for this problem.
 
+## Benchmark Dataset 
+The benchmark dataset can be downloaded here: [['Download Link'](https://figshare.com/ndownloader/files/41222934)](8.34 GB)
+
+
+# Folder Structure
+```
+├── No-Subfig-Img                       #contains figure-image files for each split of the dataset
+│	├── Train
+│	├── Val
+│	└── Test
+├── Caption-All                         #contains corresponding figure-captions and (precomputed) inferred human-feedback metadata
+│	├── Train
+│	├── Val
+│	└── Test
+├── human-feedback.csv                  #contains human evaluations of a subset of figure image-caption pairs
+├── arxiv-metadata-oai-snapshot.json    #arXiv paper metadata (from arXiv dataset) 
+└── List-of-Files-for-Each-Experiments  #list of figure names used in each experiment 
+    ├── Single-Sentence-Caption
+    │   ├── No-Subfig
+    │   │   ├── Train
+    │	│   ├── Val
+    │	│   └── Test
+    │	└── Yes-Subfig
+    │       ├── Train
+    │       ├── Val
+    │       └── Test
+    ├── First-Sentence                  #Same as in Single-Sentence-Caption
+    └── Caption-No-More-Than-100-Tokens #Same as in Single-Sentence-Caption
+```
+# Human Feedback Benchmark Data 
+The included human-feedback.csv contains human evaluations of 439 figure image-caption pairs from the dataset. These evaluations consist of ratings, for each image-caption pair, of the “helpfulness”, “OCR (quality)”, “takeaway” and “visual (descriptiveness)”, each scored on a 1-5 point scale (5 being the highest). Additionally, the annotations include a boolean indicating whether each pair “has-image-error”, “has-caption-error”, “has-classification-error” or “has-subfigure-error”. For convenience, the image-file name and url of the originating arXiv-paper are also included.
+
+## Number of Figures in Each Subset
+
+|                         |  Train  | Validate |  Test  |
+|------------------------:|:-------:|:--------:|:------:|
+| Benchmark               | 106,834 |  13,354  | 13,355 |
+
+
+## JSON Data Format (for each figure-caption in Caption-All)
+
+### Example Data Instance (Caption and Figure)
+
+An example JSON object:
+
+```
+{
+  "contains-subfigure": true, 
+  "Img-text": ["(b)", "s]", "[m", "fs", "et", "e", "of", "T", "im", "Attack", "duration", "[s]", "350", "300", "250", "200", "150", "100", "50", "0", "50", "100", "150", "200", "250", "300", "0", "(a)", "]", "[", "m", "fs", "et", "e", "of", "ta", "nc", "D", "is", "Attack", "duration", "[s]", "10000", "9000", "8000", "7000", "6000", "5000", "4000", "3000", "2000", "1000", "0", "50", "100", "150", "200", "250", "300", "0"], 
+  "paper-ID": "1001.0025v1", 
+  "figure-ID": "1001.0025v1-Figure2-1.png", 
+  "figure-type": "Graph Plot", 
+  "human-feedback":{
+    "helpfulness": {
+      "score": XXXX,
+      "label": "[GOOD]/[BAD]",
+      "caption-prepend": "[GOOD]/[BAD] actual caption...",
+    },
+    "ocr": {
+      "score": XXXX,
+      "label": "[GOOD]/[BAD]",
+      "caption-prepend": "[GOOD]/[BAD] actual caption...",
+    },
+    "visual": {
+      "score": XXXX,
+      "label": "[GOOD]/[BAD]",
+      "caption-prepend": "[GOOD]/[BAD] actual caption...",
+    },
+    "takeaway": {
+      "score": XXXX,
+      "label": "[GOOD]/[BAD]",
+      "caption-prepend": "[GOOD]/[BAD] actual caption...",
+    },
+  }
+  "0-originally-extracted": "Figure 2: Impact of the replay attack, as a function of the spoofing attack duration. (a) Location offset or error: Distance between the attack-induced and the actual victim receiver position. (b) Time offset or error: Time difference between the attack-induced clock value and the actual time.", 
+  "1-lowercase-and-token-and-remove-figure-index": {
+    "caption": "impact of the replay attack , as a function of the spoofing attack duration . ( a ) location offset or error : distance between the attack-induced and the actual victim receiver position . ( b ) time offset or error : time difference between the attack-induced clock value and the actual time .", 
+    "sentence": ["impact of the replay attack , as a function of the spoofing attack duration .", "( a ) location offset or error : distance between the attack-induced and the actual victim receiver position .", "( b ) time offset or error : time difference between the attack-induced clock value and the actual time ."], 
+    "token": ["impact", "of", "the", "replay", "attack", ",", "as", "a", "function", "of", "the", "spoofing", "attack", "duration", ".", "(", "a", ")", "location", "offset", "or", "error", ":", "distance", "between", "the", "attack-induced", "and", "the", "actual", "victim", "receiver", "position", ".", "(", "b", ")", "time", "offset", "or", "error", ":", "time", "difference", "between", "the", "attack-induced", "clock", "value", "and", "the", "actual", "time", "."]
+  }, 
+  "2-normalized": {
+    "2-1-basic-num": {
+      "caption": "impact of the replay attack , as a function of the spoofing attack duration . ( a ) location offset or error : distance between the attack-induced and the actual victim receiver position . ( b ) time offset or error : time difference between the attack-induced clock value and the actual time .", 
+      "sentence": ["impact of the replay attack , as a function of the spoofing attack duration .", "( a ) location offset or error : distance between the attack-induced and the actual victim receiver position .", "( b ) time offset or error : time difference between the attack-induced clock value and the actual time ."], 
+      "token": ["impact", "of", "the", "replay", "attack", ",", "as", "a", "function", "of", "the", "spoofing", "attack", "duration", ".", "(", "a", ")", "location", "offset", "or", "error", ":", "distance", "between", "the", "attack-induced", "and", "the", "actual", "victim", "receiver", "position", ".", "(", "b", ")", "time", "offset", "or", "error", ":", "time", "difference", "between", "the", "attack-induced", "clock", "value", "and", "the", "actual", "time", "."]
+      }, 
+    "2-2-advanced-equation-bracket": {
+      "caption": "impact of the replay attack , as a function of the spoofing attack duration . BRACKET-TK location offset or error : distance between the attack-induced and the actual victim receiver position . BRACKET-TK time offset or error : time difference between the attack-induced clock value and the actual time .", 
+      "sentence": ["impact of the replay attack , as a function of the spoofing attack duration .", "BRACKET-TK location offset or error : distance between the attack-induced and the actual victim receiver position .", "BRACKET-TK time offset or error : time difference between the attack-induced clock value and the actual time ."], 
+      "tokens": ["impact", "of", "the", "replay", "attack", ",", "as", "a", "function", "of", "the", "spoofing", "attack", "duration", ".", "BRACKET-TK", "location", "offset", "or", "error", ":", "distance", "between", "the", "attack-induced", "and", "the", "actual", "victim", "receiver", "position", ".", "BRACKET-TK", "time", "offset", "or", "error", ":", "time", "difference", "between", "the", "attack-induced", "clock", "value", "and", "the", "actual", "time", "."]
+      }
+    }
+  }
+```
+
+
+### JSON Scheme
+
+- **contains-subfigure:** boolean (if figure-image contains subfigures)
+- **paper-ID:** the unique paper ID in the arXiv dataset
+- **figure-ID:** the extracted figure ID of paper (the index is not the same as the label in the caption)
+- **figure-type:** the figure type
+- **0-originally-extracted:** original figure-caption
+- **1-lowercase-and-token-and-remove-figure-index:** Removed figure index and the captions in lowercase
+- **2-normalized:** 
+  - **2-1-basic-num:** caption after replacing the number
+  - **2-2-advanced-euqation-bracket:** caption after replacing the equations and contents in the bracket
+- **Img-text:** texts extracted from the figure, such as the texts for labels, legends ... etc.
+
+Within the caption content, we have three attributes:
+
+- **caption:** caption after each normalization
+- **sentence:** a list of segmented sentences
+- **token:** a list of tokenized words
+
+Within the human feedback metadata, we have the inferred human-feedback for the different metrics (helpfulness, ocr, takeaway, and visual)
+
+**HumanFeedback:** 
+  - **Helpfulness:**   Expert's rating on how helpful a caption is to understand a scientific figure
+    - **Score:**             predicted score                               
+    - **Token:**             [Good]/[Bad]
+    - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended
+  - **Takeaway:**      Expert's rating on the takeaway from the scientific image 
+    - **Score:**             predicted score              
+    - **Token:**             [Good]/[Bad]
+    - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended
+  - **OCR:**           Expert's rating on the OCRs expressiveness
+    - **Score:**             predicted score              
+    - **Token:**             [Good]/[Bad]
+    - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended
+  - **Visual:**        Expert's rating on the visualness of the scientific figure 
+    - **Score:**             predicted score              
+    - **Token:**             [Good]/[Bad]
+    - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 | Model            | Parameters | ROUGE-L | BLEU   | Meteor |
 |------------------|------------|---------|--------|--------|
 | BLIP             | 0.25B      | 0.130   | 0.014  | 0.132  |

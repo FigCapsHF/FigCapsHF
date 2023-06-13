@@ -122,19 +122,19 @@ Within the caption content, we have three attributes:
 Within the human feedback metadata, we have the inferred human-feedback for the different metrics (helpfulness, ocr, takeaway, and visual)
 
 **human-feedback:** 
-  - **Helpfulness:**   Expert's rating on how helpful a caption is to understand a scientific figure
+  - **helpfulness:**   Expert's rating on how helpful a caption is to understand a scientific figure
     - **Score:**             predicted score                               
     - **Token:**             [Good]/[Bad]
     - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended
-  - **Takeaway:**      Expert's rating on the takeaway from the scientific image 
+  - **takeaway:**      Expert's rating on the takeaway from the scientific image 
     - **Score:**             predicted score              
     - **Token:**             [Good]/[Bad]
     - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended
-  - **OCR:**           Expert's rating on the OCRs expressiveness
+  - **ocr:**           Expert's rating on the OCRs expressiveness
     - **Score:**             predicted score              
     - **Token:**             [Good]/[Bad]
     - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended
-  - **Visual:**        Expert's rating on the visualness of the scientific figure 
+  - **visual:**        Expert's rating on the visualness of the scientific figure 
     - **Score:**             predicted score              
     - **Token:**             [Good]/[Bad]
     - **caption-prepend:**    1-lowercase-and-token-and-remove-figure-index caption with the token pre-pended

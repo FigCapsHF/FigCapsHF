@@ -3,14 +3,10 @@
 <!-- [[`Paper`]()]  [[`BibTex`]()]  -->
 [[`Website`](https://figcapshf.github.io/)] [[`Benchmark Dataset`](https://figshare.com/s/c034fd77bea9475319cb)]
 
-## Abstract
-Captions are crucial for understanding scientific visualizations and documents.
-Existing captioning methods for scientific figures rely on figure-caption pairs extracted from documents for training, many of which fall short with respect to metrics like helpfulness, explainability, and visual-descriptiveness \cite{summaries-as-captions-preprint} leading to generated captions being misaligned with reader preferences. 
-To enable the generation of high-quality figure captions, we introduce \textbf{FigCaps-HF} a new framework for figure-caption generation that can incorporate domain expert feedback in generating captions optimized for reader preferences. 
+To enable the generation of high-quality figure captions, we introduce **FigCaps-HF**, a new framework for figure-caption generation that can incorporate domain expert feedback in generating captions optimized for reader preferences. 
 Our framework comprises of 1) an automatic method for evaluating quality of figure-caption pairs, 2) a novel reinforcement learning with human feedback (RLHF) method to optimize a generative figure-to-caption model for reader preferences.
-We demonstrate the effectiveness of our simple learning framework by improving performance over standard fine-tuning across different types of models. 
-In particular, when using BLIP as the base model, our RLHF framework achieves a mean gain of 35.7\%, 16.9\%, and 9\% in ROUGE, BLEU, and Meteor, respectively. 
-Finally, we release a large-scale benchmark dataset with human feedback on figure-caption pairs to enable further evaluation and development of RLHF techniques for this problem.
+We demonstrate the effectiveness of our simple learning framework by improving performance over standard fine-tuning across different types of models. In particular, when using BLIP as the base model, our RLHF framework achieves a mean gain of 35.7\%, 16.9\%, and 9\% in ROUGE, BLEU, and Meteor, respectively. 
+We release a large-scale benchmark dataset with human feedback on figure-caption pairs to enable further evaluation and development of RLHF techniques for this problem.
 
 | Model            | Parameters | ROUGE-L | BLEU   | Meteor |
 |------------------|------------|---------|--------|--------|
@@ -36,7 +32,7 @@ We first need to clone this repository, install the requirements, and download t
 pip install --upgrade pip
 git clone https://github.com/FigCapsHF/FigCapsHF
 pip install -r requirements.txt
-wget  https://figshare.com/ndownloader/files/41222934 -O benchmark.zip
+wget https://figshare.com/ndownloader/files/41222934 -O benchmark.zip
 unzip benchmark.zip
 ```
 ## Example Usage

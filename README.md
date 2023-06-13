@@ -156,7 +156,7 @@ unzip benchmark.zip
 python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path XX/benchmark
 ```
 ### Inference 
-Our RLHF-Finetuned BLIP Model can be downloaded here: [[Download Link](https://drive.google.com/file/d/1FZh95Xeyt3RlaYs_TeeiiSPwYvAuGogQ/view?usp=share_link)](2.5 GB)
+Our RLHF-Finetuned BLIP Model can be downloaded here: [[Download Link](https://drive.google.com/file/d/1BtyBkk9bZeruzjttMAzWlTDnJCzLlmpc/view?usp=share_link)](2.5 GB)
 
 ```python
 #Generate caption for a single image

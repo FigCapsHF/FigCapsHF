@@ -1,7 +1,7 @@
 # FigCaps-HF: A Figure-to-Caption Generative Framework and Benchmark with Human Feedback
 
 <!-- [[`Paper`]()]  [[`BibTex`]()]  -->
-[[`Website`](https://figcapshf.github.io/)] [[Benchmark Dataset](https://figshare.com/s/c034fd77bea9475319cb)]
+[[`Website`](https://figcapshf.github.io/)] [[Benchmark Dataset](https://doi.org/10.6084/m9.figshare.23504517)]
 
 To enable the generation of high-quality figure captions, we introduce **FigCaps-HF**, a new framework for figure-caption generation that can incorporate domain expert feedback in generating captions optimized for reader preferences. 
 Our framework comprises of 1) an automatic method for evaluating quality of figure-caption pairs, 2) a novel reinforcement learning with human feedback (RLHF) method to optimize a generative figure-to-caption model for reader preferences.

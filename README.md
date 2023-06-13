@@ -155,20 +155,38 @@ unzip benchmark.zip
 python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path XX/benchmark
 ```
 ### Inference
-For a single image
+Generate caption for a single image
 ```python
 python inference.py --figure_path /path/test_image.png --model_path /path/model.pth
 ```
 Generate test metrics for the entire dataset
 ```python
-python train_blip.py --benchmark_path XX/benchmark
+python train_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
 ```
 ### Human Feedback Generation
+Generate human-feedback metadata for the dataset
 ```python
 from FigCapsHF import FigCapsHF
 FigCapsHF = FigCapsHF("path/to/benchmark/data")
 inferred_hf_df = FigCapsHF.infer_hf_training_set(hf_score_type = "helpfulness", embedding_model = "BERT", max_num_samples = 100, quantization_levels = 3, mapped_hf_labels = ["Bad", "Neutral", "Good"])
 ```
+Generate a human-feedback score for a single figure-caption pair
+```python
+from FigCapsHF import FigCapsHF
+FigCapsHF = FigCapsHF("path/to/benchmark/data")
+
+hf_ds_embeddings, scores = FigCapsHF.generate_embeddings_hf_anno(hf_score_type = "helpfulness", embedding_model = "BERT")
+scoring_model = FigCapsHF.train_scoring_model(hf_ds_embeddings, scores)
+
+image_path = "/path/1907.11521v1-Figure6-1.png"
+caption = "the graph indicates the loss of the model over successive generations"
+
+embedding = FigCapsHF.generate_embeddings([image_path], [caption], embedding_model = "BERT")
+inferred_hf_score = scoring_model.predict(embedding)
+
+```
+
+
 <!-- 
 
 | Model            | Parameters | ROUGE-L | BLEU   | Meteor |

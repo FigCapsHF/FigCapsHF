@@ -1,7 +1,7 @@
 # FigCaps-HF: A Figure-to-Caption Generative Framework and Benchmark with Human Feedback
 
 <!-- [[`Paper`]()]  [[`BibTex`]()]  -->
-[[`Website`](https://figcapshf.github.io/)] [[`Benchmark Dataset`](https://figshare.com/s/c034fd77bea9475319cb)]
+[[`Website`](https://figcapshf.github.io/)] [[Benchmark Dataset](https://figshare.com/s/c034fd77bea9475319cb)]
 
 To enable the generation of high-quality figure captions, we introduce **FigCaps-HF**, a new framework for figure-caption generation that can incorporate domain expert feedback in generating captions optimized for reader preferences. 
 Our framework comprises of 1) an automatic method for evaluating quality of figure-caption pairs, 2) a novel reinforcement learning with human feedback (RLHF) method to optimize a generative figure-to-caption model for reader preferences.
@@ -12,7 +12,7 @@ We release a large-scale benchmark dataset with human feedback on figure-caption
 The benchmark dataset can be downloaded here: [['Download Link'](https://figshare.com/ndownloader/files/41222934)](8.34 GB)
 
 
-# Folder Structure
+### Folder Structure
 ```
 ├── No-Subfig-Img                       #contains figure-image files for each split of the dataset
 │	├── Train
@@ -37,19 +37,19 @@ The benchmark dataset can be downloaded here: [['Download Link'](https://figshar
     ├── First-Sentence                  #Same as in Single-Sentence-Caption
     └── Caption-No-More-Than-100-Tokens #Same as in Single-Sentence-Caption
 ```
-# Human Feedback Benchmark Data 
+### Human Feedback Benchmark Data 
 The included human-feedback.csv contains human evaluations of 439 figure image-caption pairs from the dataset. These evaluations consist of ratings, for each image-caption pair, of the “helpfulness”, “OCR (quality)”, “takeaway” and “visual (descriptiveness)”, each scored on a 1-5 point scale (5 being the highest). Additionally, the annotations include a boolean indicating whether each pair “has-image-error”, “has-caption-error”, “has-classification-error” or “has-subfigure-error”. For convenience, the image-file name and url of the originating arXiv-paper are also included.
 
-## Number of Figures in Each Subset
+### Number of Figures in Each Subset
 
 |                         |  Train  | Validate |  Test  |
 |------------------------:|:-------:|:--------:|:------:|
 | Benchmark               | 106,834 |  13,354  | 13,355 |
 
 
-## JSON Data Format (for each figure-caption in Caption-All)
+### JSON Data Format (for each figure-caption in Caption-All)
 
-### Example Data Instance (Caption and Figure)
+#### Example Data Instance (Caption and Figure)
 
 An example JSON object:
 
@@ -160,16 +160,6 @@ Within the human feedback metadata, we have the inferred human-feedback for the 
 |------------------|------------|---------|--------|--------|
 | BLIP             | 0.25B      | 0.130   | 0.014  | 0.132  |
 | Ours-BLIP-RLHF   | 0.25B      | 0.152   | 0.019  | 0.145  |
-
-## Benchmark Dataset
-
-Number of Figures in Each Subset
-
-|                         |  Train  | Validate |  Test  |
-|------------------------:|:-------:|:--------:|:------:|
-| Benchmark               | 106,834 |  13,354  | 13,355 |
-
-Additionally, we include the human evaluations of 439 figure-caption pairs as a CSV in the dataset. These evaluations consist of ratings, for each image-caption pair, of the “helpfulness”, “OCR (quality)”, “takeaway” and “visual (descriptiveness)”, from which we learn about human feedback for figure-caption pairs. 
 
 <!-- ## Retrieving the dataset
 Our benchmark dataset can be downloaded from [[`here`](https://figshare.com/s/c034fd77bea9475319cb)]. -->

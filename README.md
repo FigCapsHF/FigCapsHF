@@ -47,9 +47,9 @@ The included human-feedback.csv contains human evaluations of 439 figure image-c
 | Benchmark                 | 106,834 |  13,354  | 13,355 |
 
 
-### JSON Data Format (for each figure-caption in Caption-All)
+## JSON Data Format (for each figure-caption in Caption-All)
 
-#### Example Data Instance (Caption and Figure)
+### Example Data Instance (Caption and Figure)
 
 An example JSON object:
 
@@ -103,7 +103,7 @@ An example JSON object:
   }
 ```
 
-### JSON Scheme
+## JSON Scheme
 
 - **contains-subfigure:** boolean (if figure-image contains subfigures)
 - **paper-ID:** the unique paper ID in the arXiv dataset

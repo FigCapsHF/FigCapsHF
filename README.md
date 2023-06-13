@@ -166,14 +166,16 @@ python inference.py --figure_path /path/test_image.png --model_path /path/model.
 python train_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
 ```
 ### Human Feedback Generation
-Generate human-feedback metadata for the dataset
+
 ```python
+#Generate human-feedback metadata for the dataset
 from FigCapsHF import FigCapsHF
 FigCapsHF = FigCapsHF("path/to/benchmark/data")
 inferred_hf_df = FigCapsHF.infer_hf_training_set(hf_score_type = "helpfulness", embedding_model = "BERT", max_num_samples = 100, quantization_levels = 3, mapped_hf_labels = ["Bad", "Neutral", "Good"])
 ```
-Generate a human-feedback score for a single figure-caption pair
+
 ```python
+#Generate a human-feedback score for a single figure-caption pair
 from FigCapsHF import FigCapsHF
 FigCapsHF = FigCapsHF("path/to/benchmark/data")
 

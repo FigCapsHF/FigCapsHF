@@ -1,7 +1,7 @@
 # FigCaps-HF: A Figure-to-Caption Generative Framework and Benchmark with Human Feedback
 
 <!-- [[`Paper`]()]  [[`BibTex`]()]  -->
-[[`Website`](https://figcapshf.github.io/)] [[Benchmark Dataset](https://doi.org/10.6084/m9.figshare.23504517)]
+[[Website](https://figcapshf.github.io/)] [[Benchmark Dataset](https://doi.org/10.6084/m9.figshare.23504517)]
 
 To enable the generation of high-quality figure captions, we introduce **FigCaps-HF**, a new framework for figure-caption generation that can incorporate domain expert feedback in generating captions optimized for reader preferences. 
 Our framework comprises of 1) an automatic method for evaluating quality of figure-caption pairs, 2) a novel reinforcement learning with human feedback (RLHF) method to optimize a generative figure-to-caption model for reader preferences.
@@ -9,7 +9,7 @@ Our framework comprises of 1) an automatic method for evaluating quality of figu
 We release a large-scale benchmark dataset with human feedback on figure-caption pairs to enable further evaluation and development of RLHF techniques for this problem.
 
 ## Benchmark Dataset 
-The benchmark dataset can be downloaded here: [['Download Link'](https://figshare.com/ndownloader/files/41222934)](8.34 GB)
+The benchmark dataset can be downloaded here: [[Download Link](https://figshare.com/ndownloader/files/41222934)](8.34 GB)
 
 
 ### Folder Structure
@@ -44,7 +44,7 @@ The included human-feedback.csv contains human evaluations of 439 figure image-c
 
 |                         |  Train  | Validate |  Test  |
 |------------------------:|:-------:|:--------:|:------:|
-| Benchmark               | 106,834 |  13,354  | 13,355 |
+| Benchmark                 | 106,834 |  13,354  | 13,355 |
 
 
 ### JSON Data Format (for each figure-caption in Caption-All)
@@ -102,7 +102,6 @@ An example JSON object:
     }
   }
 ```
-
 
 ### JSON Scheme
 

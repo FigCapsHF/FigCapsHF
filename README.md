@@ -100,7 +100,7 @@ The included human-feedback.csv contains human evaluations of 439 figure image-c
   }
 ```
 
-### JSON Scheme
+### JSON Schema
 
 - **contains-subfigure:** boolean (if figure-image contains subfigures)
 - **paper-ID:** the unique paper ID in the arXiv dataset

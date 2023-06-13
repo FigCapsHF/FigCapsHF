@@ -103,7 +103,7 @@ An example JSON object:
   }
 ```
 
-## JSON Scheme
+### JSON Scheme
 
 - **contains-subfigure:** boolean (if figure-image contains subfigures)
 - **paper-ID:** the unique paper ID in the arXiv dataset

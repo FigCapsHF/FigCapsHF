@@ -169,6 +169,20 @@ python inference.py --figure_path /path/test_image.png --model_path /path/model.
 #Generate evaluation metrics on the test dataset
 python test_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
 ```
+### Visualization
+```python
+#Visualize sample from dataset
+from FigCapsHF import FigCapsHF
+FigCapsHF = FigCapsHF("path/to/benchmark/data")
+FigCapsHF.get_image_caption_pair(data_split = "train", image_name = "1001.0025v1-Figure5-1")
+```
+```python
+#Visualize sample from the human annotated dataset and associated metadata
+from FigCapsHF import FigCapsHF
+FigCapsHF = FigCapsHF("path/to/benchmark/data")
+FigCapsHF.get_image_caption_pair_hf(image_name = "1907.11521v1-Figure6-1")
+```
+
 ### Human Feedback Generation
 
 ```python

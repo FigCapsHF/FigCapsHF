@@ -169,12 +169,12 @@ python inference.py --figure_path /path/test_image.png --model_path /path/model.
 #Generate evaluation metrics on the test dataset
 python test_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
 ```
-### Visualization
+For the following sections, we initialize a FigCapsHF object
 ```python
-#Initialize Object
 from FigCapsHF import FigCapsHF
 FigCapsHF = FigCapsHF("path/to/benchmark/data")
 ```
+### Visualization
 ```python
 #Visualize sample from dataset
 FigCapsHF.get_image_caption_pair(data_split = "train", image_name = "1001.0025v1-Figure5-1")

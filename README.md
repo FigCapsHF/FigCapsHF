@@ -171,8 +171,9 @@ python test_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
 ```
 
 ### Visualization
-For the following sections, we initialize a FigCapsHF object
+
 ```python
+#For the following sections, we initialize a FigCapsHF object
 from FigCapsHF import FigCapsHF
 FigCapsHF = FigCapsHF("path/to/benchmark/data")
 ```

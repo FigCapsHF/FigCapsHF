@@ -163,11 +163,11 @@ Our RLHF Fine-tuned BLIP Model can be downloaded here: [[Download Link](https://
 
 ```python
 #Generate caption for a single image
-python inference.py --figure_path /path/test_image.png --model_path /path/model.pth
+python inference.py --figure_path /path/to/test_image.png --model_path path/to/model.pth
 ```
 ```python
 #Generate evaluation metrics on the test dataset
-python test_blip.py --benchmark_path XX/benchmark --model_path /path/model.pth
+python test_blip.py --benchmark_path path/to/benchmark/data --model_path path/to/model.pth
 ```
 
 ### Visualization

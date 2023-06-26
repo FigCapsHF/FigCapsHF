@@ -145,6 +145,7 @@ Within the human-feedback field, we have the inferred human-feedback for the dif
 #We first need to clone this repository, install the requirements, and download the benchmark dataset
 pip install --upgrade pip
 git clone https://github.com/FigCapsHF/FigCapsHF
+cd FigCapsHF
 pip install -r requirements.txt
 wget  https://figshare.com/ndownloader/files/41222934 -O benchmark.zip
 unzip benchmark.zip

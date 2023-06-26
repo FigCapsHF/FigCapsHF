@@ -171,7 +171,7 @@ python inference.py --figure_path /path/to/test_image.png --model_path /checkpoi
 ```
 ```python
 #Generate evaluation metrics on the test dataset
-python test_blip.py --benchmark_path benchmark --model_path /checkpoint_09.pth
+python test_blip.py --benchmark_path /benchmark --model_path /checkpoint_09.pth
 ```
 
 ### Visualization
@@ -210,14 +210,6 @@ inferred_hf_score = scoring_model.predict(embedding)
 
 ```
 
-
-<!-- 
-
-| Model            | Parameters | ROUGE-L | BLEU   | Meteor |
-|------------------|------------|---------|--------|--------|
-| BLIP             | 0.25B      | 0.130   | 0.014  | 0.132  |
-| Ours-BLIP-RLHF   | 0.25B      | 0.152   | 0.019  | 0.145  |
- -->
 <!-- ## Retrieving the dataset
 Our benchmark dataset can be downloaded from [[`here`](https://figshare.com/s/c034fd77bea9475319cb)]. -->
 

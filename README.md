@@ -155,7 +155,7 @@ unzip benchmark.zip
 ```python
 #Code edits to implement a baseline are also included in train_blip.py
 #Preferred training on GPUs. If training on CPU, add "--cpu" flag.
-python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path XX/benchmark
+python train_blip.py --mixed_precision fp16 --hf_score_type helpfulness --benchmark_path /benchmark
 
 ```
 ### Inference 
@@ -167,11 +167,11 @@ wget https://figshare.com/ndownloader/files/41359434 -O checkpoint_09.pth
 
 ```python
 #Generate caption for a single image
-python inference.py --figure_path /path/to/test_image.png --model_path path/to/model.pth
+python inference.py --figure_path /path/to/test_image.png --model_path /checkpoint_09.pth
 ```
 ```python
 #Generate evaluation metrics on the test dataset
-python test_blip.py --benchmark_path path/to/benchmark/data --model_path path/to/model.pth
+python test_blip.py --benchmark_path benchmark --model_path /checkpoint_09.pth
 ```
 
 ### Visualization
@@ -179,7 +179,7 @@ python test_blip.py --benchmark_path path/to/benchmark/data --model_path path/to
 ```python
 #For the following sections, we initialize a FigCapsHF object
 from FigCapsHF import FigCapsHF
-FigCapsHF = FigCapsHF("path/to/benchmark/data")
+FigCapsHF = FigCapsHF("/benchmark")
 ```
 ```python
 #Visualize sample from dataset

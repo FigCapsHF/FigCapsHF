@@ -168,7 +168,7 @@ wget https://figshare.com/ndownloader/files/41359434 -O checkpoint_09.pth
 
 ```python
 #Generate caption for a single image
-python inference.py --figure_path /FigCapsHF/Figures/sample.png --model_path /checkpoint_09.pth
+python inference.py --figure_path /Figures/sample.png --model_path /checkpoint_09.pth
 ```
 ```python
 #Generate evaluation metrics on the test dataset
@@ -203,7 +203,7 @@ inferred_hf_df = FigCapsHF.infer_hf_training_set(hf_score_type = "helpfulness", 
 hf_ds_embeddings, scores = FigCapsHF.generate_embeddings_hf_anno(hf_score_type = "helpfulness", embedding_model = "BERT")
 scoring_model = FigCapsHF.train_scoring_model(hf_ds_embeddings, scores)
 
-image_path = "/path/1907.11521v1-Figure6-1.png"
+image_path = "/Figures/sample.png"
 caption = "the graph indicates the loss of the model over successive generations"
 
 embedding = FigCapsHF.generate_embeddings([image_path], [caption], embedding_model = "BERT")

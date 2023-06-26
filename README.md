@@ -167,7 +167,7 @@ wget https://figshare.com/ndownloader/files/41359434 -O checkpoint_09.pth
 
 ```python
 #Generate caption for a single image
-python inference.py --figure_path /path/to/test_image.png --model_path /checkpoint_09.pth
+python inference.py --figure_path /test_image.png --model_path /checkpoint_09.pth
 ```
 ```python
 #Generate evaluation metrics on the test dataset
